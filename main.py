@@ -11,8 +11,6 @@ load_dotenv()
 def ipo(bot, update):
     chat_id = update.message.chat_id
     ipo = get_ipo()
-    # print(type(ipo))
-    # print(ipo)
     text = "<pre>Upcoming IPOs\n\n"
     for row in ipo:
         for i in row:
