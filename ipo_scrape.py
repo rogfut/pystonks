@@ -4,7 +4,6 @@ import json
 from datetime import date
 
 import requests
-from prettytable import PrettyTable
 from requests_html import HTMLSession
 from bs4 import BeautifulSoup
 
