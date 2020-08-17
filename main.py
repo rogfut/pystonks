@@ -61,6 +61,7 @@ def main():
     dp.add_handler(CommandHandler('eth', eth))
     dp.add_handler(CommandHandler('link', link))
     dp.add_handler(CommandHandler('rvn', rvn))
+    dp.add_handler(CommandHandler('xmr', xmr))
     updater.start_polling()
     updater.idle()
 
