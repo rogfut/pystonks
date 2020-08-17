@@ -37,14 +37,20 @@ def eth(bot, update):
 
 def link(bot, update):
     chat_id = update.message.chat_id
-    btc_data = crypto_price(os.environ['ETH_PRICE_URL'])
+    btc_data = crypto_price(os.environ['LINK_PRICE_URL'])
     text = "LINK:  " + btc_data[0] + "\nChange:  " + btc_data[1] + "\nVol(24h):  " + btc_data[2] + "\n\nFollow" + backhand_index_pointing_right + "[@rogut](https://github.com/rogfut)"
     bot.send_message(chat_id=chat_id, text=text, disable_web_page_preview='true', parse_mode='markdown')
 
 def rvn(bot, update):
     chat_id = update.message.chat_id
-    btc_data = crypto_price(os.environ['ETH_PRICE_URL'])
+    btc_data = crypto_price(os.environ['RVN_PRICE_URL'])
     text = "RVN:  " + btc_data[0] + "\nChange:  " + btc_data[1] + "\nVol(24h):  " + btc_data[2] + "\n\nFollow" + backhand_index_pointing_right + "[@rogut](https://github.com/rogfut)"
+    bot.send_message(chat_id=chat_id, text=text, disable_web_page_preview='true', parse_mode='markdown')
+
+def xmr(bot, update):
+    chat_id = update.message.chat_id
+    btc_data = crypto_price(os.environ['XMR_PRICE_URL'])
+    text = "XMR:  " + btc_data[0] + "\nChange:  " + btc_data[1] + "\nVol(24h):  " + btc_data[2] + "\n\nFollow" + backhand_index_pointing_right + "[@rogut](https://github.com/rogfut)"
     bot.send_message(chat_id=chat_id, text=text, disable_web_page_preview='true', parse_mode='markdown')
 
 def main():
