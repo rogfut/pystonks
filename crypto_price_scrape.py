@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 
 from os import path
 
-def get_btc_price(url):
+def crypto_price(url):
     session = HTMLSession()
     r = session.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     soup = BeautifulSoup(r.content, 'html.parser')
