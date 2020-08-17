@@ -53,6 +53,11 @@ def xmr(bot, update):
     text = "XMR:  " + btc_data[0] + "\nChange:  " + btc_data[1] + "\nVol(24h):  " + btc_data[2] + "\n\nFollow" + backhand_index_pointing_right + "[@rogut](https://github.com/rogfut)"
     bot.send_message(chat_id=chat_id, text=text, disable_web_page_preview='true', parse_mode='markdown')
 
+def bitcoin(bot, update):
+    chat_id = update.message.chat_id
+    animation_url = 'https://media.giphy.com/media/7FBY7h5Psqd20/giphy.gif'
+    bot.sendAnimation(chat_id=chat_id, animation=animation_url)
+
 def main():
     updater = Updater(os.environ['TELEGRAM_API_KEY'])
     dp = updater.dispatcher
@@ -62,6 +67,7 @@ def main():
     dp.add_handler(CommandHandler('link', link))
     dp.add_handler(CommandHandler('rvn', rvn))
     dp.add_handler(CommandHandler('xmr', xmr))
+    dp.add_handler(CommandHandler('bitcoin', bitcoin))
     updater.start_polling()
     updater.idle()
 
