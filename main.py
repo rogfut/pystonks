@@ -35,12 +35,26 @@ def eth(bot, update):
     text = "ETH:  " + btc_data[0] + "\nChange:  " + btc_data[1] + "\nVol(24h):  " + btc_data[2] + "\n\nFollow" + backhand_index_pointing_right + "[@rogut](https://github.com/rogfut)"
     bot.send_message(chat_id=chat_id, text=text, disable_web_page_preview='true', parse_mode='markdown')
 
+def link(bot, update):
+    chat_id = update.message.chat_id
+    btc_data = crypto_price(os.environ['ETH_PRICE_URL'])
+    text = "LINK:  " + btc_data[0] + "\nChange:  " + btc_data[1] + "\nVol(24h):  " + btc_data[2] + "\n\nFollow" + backhand_index_pointing_right + "[@rogut](https://github.com/rogfut)"
+    bot.send_message(chat_id=chat_id, text=text, disable_web_page_preview='true', parse_mode='markdown')
+
+def rvn(bot, update):
+    chat_id = update.message.chat_id
+    btc_data = crypto_price(os.environ['ETH_PRICE_URL'])
+    text = "RVN:  " + btc_data[0] + "\nChange:  " + btc_data[1] + "\nVol(24h):  " + btc_data[2] + "\n\nFollow" + backhand_index_pointing_right + "[@rogut](https://github.com/rogfut)"
+    bot.send_message(chat_id=chat_id, text=text, disable_web_page_preview='true', parse_mode='markdown')
+
 def main():
     updater = Updater(os.environ['TELEGRAM_API_KEY'])
     dp = updater.dispatcher
     dp.add_handler(CommandHandler('ipo', ipo))
     dp.add_handler(CommandHandler('btc', btc))
     dp.add_handler(CommandHandler('eth', eth))
+    dp.add_handler(CommandHandler('link', link))
+    dp.add_handler(CommandHandler('rvn', rvn))
     updater.start_polling()
     updater.idle()
 
